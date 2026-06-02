@@ -100,10 +100,10 @@ class Puzzle9: Puzzle {
             let tile = queue.popFirst()!
             for delta in deltas {
                 let newTile = tile.tile(offsetBy: delta)
-                guard (-1...floor.count).contains(newTile.x), (-1...floor[0].count).contains(newTile.y) else {
+                guard -1...floor.count ~= newTile.x, -1...floor[0].count ~= newTile.y else {
                     continue
                 }
-                if (0..<floor.count).contains(newTile.x) && (0..<floor[0].count).contains(newTile.y) && floor[newTile.x][newTile.y] == 1 {
+                if 0..<floor.count ~= newTile.x && 0..<floor[0].count ~= newTile.y && floor[newTile.x][newTile.y] == 1 {
                     continue
                 }
                 if outside.contains(newTile) {
